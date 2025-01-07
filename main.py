@@ -11,12 +11,13 @@ bot = Bot(token=token)
 dp = Dispatcher()
 
 
+ides = []
 @dp.message(Command("start"))
 async def start_handler(message: types.Message):
     id = message.from_user.id
-    ides = []
+    global ides
     name = message.from_user.first_name
-    if id not in ides:
+    if id is not ides:
         ides.append(id)
         await message.answer(f'Привет, {name},наш бот обслуживает уже {len(ides)} пользователя')
     else:
