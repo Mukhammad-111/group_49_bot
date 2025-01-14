@@ -9,6 +9,36 @@ start_router = Router()
 @start_router.message(Command("start"))
 async def start_handler(message: types.Message):
     name = message.from_user.first_name
-    await message.reply(f'Приветствую вас {name}, добро пожаловать в наш бот << кафе Лидера >> ')
-    await message.answer(f'Наш график 08:00 - 23:00 без выходой')
-    await message.answer(f'В нашем боте есть команды: ( /menu, /random_dishes ) ')
+    keyboard = types.InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                types.InlineKeyboardButton(
+                    text="Наше местоположение",
+          url="https://2gis.ru/firm/70000001080310560/66.495202%2C55.273873?m=66.495146%2C55.274057%2F15.87")
+            ],
+            [
+                types.InlineKeyboardButton(
+                    text="Меню", callback_data="menu"
+                ),
+                types.InlineKeyboardButton(
+                    text="Рандомные блюдо", callback_data="random_dish"
+                )
+            ],
+            [
+                types.InlineKeyboardButton(
+                    text="О нас", callback_data="about_as"
+                )
+            ],
+            [
+                types.InlineKeyboardButton(
+                    text="Заказать еду", callback_data="order_food"
+                ),
+                types.InlineKeyboardButton(
+                    text="Оставить отзыв", callback_data="review"
+                )
+            ]
+        ]
+    )
+    await message.answer(f'Приветствую вас {name}, добро пожаловать в наш бот << кафе Лидера >>',
+                         reply_markup=keyboard)
+

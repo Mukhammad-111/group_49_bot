@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1518a81-f853-4717-a811-d5b6ed22f569" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/about_as.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/order_food.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/review_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/random_dishes.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/random_dishes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/alivia.webp" beforeDir="false" afterPath="$PROJECT_DIR$/images/alivia.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/beshbarmak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/beshbarmak.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/borsh.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/borsh.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/fruktovyi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/fruktovyi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/kuurdak.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kuurdak.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/manty.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/manty.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/morkownyi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/morkownyi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/pelmen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/pelmen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/plow.webp" beforeDir="false" afterPath="$PROJECT_DIR$/images/plow.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/shakarap.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/shakarap.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imajes/shorpo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/shorpo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,11 +120,24 @@
       <workItem from="1736486710357" duration="10872000" />
       <workItem from="1736761952579" duration="6674000" />
       <workItem from="1736843392047" duration="635000" />
+      <workItem from="1736849349064" duration="1054000" />
+      <workItem from="1736862590042" duration="10701000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_49_1_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1736261916797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

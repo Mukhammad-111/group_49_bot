@@ -1,12 +1,11 @@
-from aiogram import Router, types
-from aiogram.filters import Command
+from aiogram import Router, types, F
 from random import choice
 
 random_dishes_router = Router()
 
 
-@random_dishes_router.message(Command("random_dishes"))
-async def random_dishes_handler(message: types.Message):
+@random_dishes_router.callback_query(F.data == "random_dish")
+async def random_dishes_handler(callback: types.CallbackQuery):
     random_recipes = {
         "alivia": {
             "caption": """Рецепт 'Оливье' (традиционный)
@@ -170,7 +169,7 @@ async def random_dishes_handler(message: types.Message):
     random_name = choice(list(random_recipes.keys()))
     recipe = random_recipes[random_name]
     photo = types.FSInputFile(recipe['image'])
-    await message.answer_photo(
+    await callback.message.answer_photo(
         photo=photo,
         caption=recipe['caption']
     )
