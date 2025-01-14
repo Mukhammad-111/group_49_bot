@@ -1,5 +1,6 @@
-from aiogram import Router, types
+from aiogram import Router, types, F
 from aiogram.filters import Command
+
 
 
 start_router = Router()

@@ -19,7 +19,7 @@ async def random_dishes_handler(message: types.Message):
     Майонез — по вкусу.
     Соль, перец — по вкусу.
     Зелень (укроп или петрушка) — для украшения.""",
-            "imaje": "imajes/alivia.webp"
+            "image": "images/alivia.webp"
         },
         "beshbarmak": {
             "caption": """Рецепт "Бешбармак" (кыргызский традиционный)
@@ -33,7 +33,7 @@ async def random_dishes_handler(message: types.Message):
     Вода — для бульона и теста
     Соль, перец — по вкусу
     Зелень (укроп, петрушка) — для подачи""",
-            "imaje": "imajes/beshbarmak.jpg"
+            "image": "images/beshbarmak.jpg"
         },
         "borsh": {
             "caption": """Рецепт Борща (классический)
@@ -52,7 +52,7 @@ async def random_dishes_handler(message: types.Message):
     Уксус или лимонный сок — 1 ч. ложка (для сохранения цвета свёклы)
     Сметана — для подачи
     Зелень (укроп, петрушка) — для украшения""",
-            "imaje": "imajes/borsh.jpg"
+            "image": "images/borsh.jpg"
         },
         "fruktovyi": {
             "caption": """Рецепт Фруктового салата
@@ -65,7 +65,7 @@ async def random_dishes_handler(message: types.Message):
     Натуральный йогурт (или сметана) — 100 мл
     Мёд — 1-2 ч. ложки (по желанию)
     Лимонный сок — 1 ст. ложка (для предотвращения потемнения фруктов)""",
-            "imaje": "imajes/fruktovyi.jpg"
+            "image": "images/fruktovyi.jpg"
         },
         "kuurdak": {
             "caption": """Рецепт "Куурдак" (традиционный кыргызский)
@@ -78,7 +78,7 @@ async def random_dishes_handler(message: types.Message):
     Зира — 1 ч. ложка
     Соль, перец — по вкусу
     Зелень (укроп, петрушка) — для подачи""",
-            "imaje": "imajes/kuurdak.png"
+            "image": "images/kuurdak.png"
         },
         "manty": {
             "caption": """Рецепт Мантов (традиционный)
@@ -93,7 +93,7 @@ async def random_dishes_handler(message: types.Message):
     Курдючный жир (по желанию) — 100 г
     Соль, перец чёрный молотый — по вкусу
     Зира — 1/2 ч. ложки""",
-            "imaje": "imajes/manty.jpg"
+            "image": "images/manty.jpg"
         },
         "morkownyi": {
             "caption": """Рецепт Морковного салата (классический)
@@ -103,7 +103,7 @@ async def random_dishes_handler(message: types.Message):
     Соль — по вкусу
     Сахар — щепотка (по желанию)
     Лимонный сок — 1 ч. ложка (по желанию)""",
-            "imaje": "imajes/morkownyi.jpg"
+            "image": "images/morkownyi.jpg"
         },
         "pelmen": {
             "caption": """Рецепт Пельменей (классический)
@@ -119,7 +119,7 @@ async def random_dishes_handler(message: types.Message):
     Чеснок — 2 зубчика
     Соль, перец — по вкусу
     Вода — 50 мл (для сочности начинки)""",
-            "imaje": "imajes/pelmen.jpg"
+            "image": "images/pelmen.jpg"
         },
         "plow": {
             "caption": """Рецепт Плова (классический узбекский)
@@ -134,7 +134,7 @@ async def random_dishes_handler(message: types.Message):
     Соль — по вкусу
     Перец чёрный молотый — по вкусу
     Вода — около 1 литра (или по необходимости)""",
-            "imaje": "imajes/plow.webp"
+            "image": "images/plow.webp"
         },
         "shakarap": {
             "caption": """Рецепт Шакароба (узбекский)
@@ -149,7 +149,7 @@ async def random_dishes_handler(message: types.Message):
     Перец чёрный молотый — по вкусу
     Оливковое или растительное масло — 2-3 ст. ложки
     Вода (если нужно) — 100-150 мл""",
-            "imaje": "imajes/shakarap.jpg"
+            "image": "images/shakarap.jpg"
         },
         "shorpo": {
             "caption": """Рецепт Супа с говядиной (кыргызский)
@@ -164,12 +164,12 @@ async def random_dishes_handler(message: types.Message):
     Растительное масло — 2 ст. ложки
     Зелень (петрушка или укроп) — по вкусу
     Вода — 2-2,5 литра""",
-            "imaje": "imajes/shorpo.jpg"
+            "image": "images/shorpo.jpg"
         }
     }
     random_name = choice(list(random_recipes.keys()))
     recipe = random_recipes[random_name]
-    photo = types.FSInputFile(recipe['imaje'])
+    photo = types.FSInputFile(recipe['image'])
     await message.answer_photo(
         photo=photo,
         caption=recipe['caption']
