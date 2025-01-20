@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1518a81-f853-4717-a811-d5b6ed22f569" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dp_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/dp_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/review_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/review_dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +200,7 @@
       <workItem from="1736843392047" duration="635000" />
       <workItem from="1736849349064" duration="1054000" />
       <workItem from="1736862590042" duration="10984000" />
-      <workItem from="1737367378597" duration="10343000" />
+      <workItem from="1737367378597" duration="10747000" />
     </task>
     <servers />
   </component>

@@ -88,9 +88,9 @@ async def process_number(message: types.Message, state: FSMContext):
     await state.set_state(CafeReview.rate)
 
 
-@review_router.callback_query(F.data.startswith("rating:"))
+@review_router.callback_query(CafeReview.rate)
 async def process_rate(callback: types.CallbackQuery, state: FSMContext):
-    rate = int(callback.data.split(":")[1])
+    rate = callback.data
     await state.update_data(rate=rate)
     await callback.message.answer("Дополнительные комментарии или жалоба")
     await state.set_state(CafeReview.extra_comments)
