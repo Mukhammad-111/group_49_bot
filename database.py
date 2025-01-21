@@ -5,7 +5,7 @@ class Database:
     def __init__(self, path: str):
         self.path = path
 
-    def create_table(self):
+    def create_tables(self):
         with sqlite3.connect(self.path) as connection:
             cursor = connection.cursor()
             connection.execute("""
@@ -19,13 +19,39 @@ class Database:
             )
             """)
 
+
+            connection.execute("""
+            CREATE TABLE IF NOT EXISTS dishes(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(200),
+            price INTEGER,
+            description TEXT,
+            category TEXT,
+            serving_options TEXT
+            )
+            """)
+
+
     def save_reviews(self, data: dict):
         with sqlite3.connect(self.path) as connection:
             connection.execute(
-                """
+                """ 
                         INSERT INTO reviews(name, date, phone_number, rate, extra_comments)
                         VALUES (?, ?, ?, ?, ?)
                     """,
               (data["name"], (data["date"]), data["phone_number"], data["rate"],
                data["extra_comments"])
                     )
+
+
+
+    def save_dishes(self, data: dict):
+        with sqlite3.connect(self.path) as connection:
+            connection.execute(
+                """
+                        INSERT INTO dishes(name, price, description, category, serving_options)
+                        VALUES (?, ?, ?, ?, ?)
+                    """,
+              (data["name"], data["price"], data["description"], data["category"],
+               data["serving_options"])
+            )

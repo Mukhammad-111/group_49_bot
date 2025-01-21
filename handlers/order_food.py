@@ -26,19 +26,19 @@ async def process_name(message: types.Message, state: FSMContext):
 
 
 @order_food_router.message(Order.tel_number)
-async def process_name(message: types.Message, state: FSMContext):
+async def process_tel_number(message: types.Message, state: FSMContext):
     await message.answer("Напишите пожалюста адрес которую мы доставим еду")
     await state.set_state(Order.address)
 
 
 @order_food_router.message(Order.address)
-async def process_name(message: types.Message, state: FSMContext):
+async def process_address(message: types.Message, state: FSMContext):
     await message.answer("Что вы хотите заказать")
     await state.set_state(Order.order_food)
 
 
 @order_food_router.message(Order.order_food)
-async def process_name(message: types.Message, state: FSMContext):
+async def process_order_food(message: types.Message, state: FSMContext):
     await message.answer("Ваш заказ принято, ваш заказ бутдет отправлено через 15 минут")
     await state.clear()
 

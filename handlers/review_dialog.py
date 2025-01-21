@@ -41,14 +41,14 @@ async def start_review(callback: types.CallbackQuery, state: FSMContext):
 
 
 @review_router.message(CafeReview.name)
-async def process_number(message: types.Message, state: FSMContext):
+async def process_name(message: types.Message, state: FSMContext):
     name = message.text
     await state.update_data(name=name)
     await message.answer("Напишите сегодняшнюю дату")
     await state.set_state(CafeReview.date)
 
 @review_router.message(CafeReview.date)
-async def process_number(message: types.Message, state: FSMContext):
+async def process_date(message: types.Message, state: FSMContext):
     date = message.text
     await state.update_data(date=date)
     await message.answer("Напишите вашу номер телефона")
