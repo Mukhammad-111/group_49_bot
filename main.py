@@ -10,6 +10,7 @@ from handlers.order_food import order_food_router
 from handlers.review_dialog import review_router
 from aiogram import Bot
 from handlers.food_management import food_admin_router
+from handlers.dishes import dishes_router
 
 
 async def on_startup(bot: Bot):
@@ -25,6 +26,7 @@ async def main():
     dp.include_router(review_router)
     dp.startup.register(on_startup)
     dp.include_router(food_admin_router)
+    dp.include_router(dishes_router)
     await dp.start_polling(bot)
 
 
