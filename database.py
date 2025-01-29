@@ -27,7 +27,7 @@ class Database:
             price INTEGER,
             description TEXT,
             category TEXT,
-            serving_options TEXT
+            photo TEXT
             )
             """)
 
@@ -49,11 +49,11 @@ class Database:
         with sqlite3.connect(self.path) as connection:
             connection.execute(
                 """
-                        INSERT INTO dishes(name, price, description, category, serving_options)
+                        INSERT INTO dishes(name, price, description, category, photo)
                         VALUES (?, ?, ?, ?, ?)
                     """,
               (data["name"], data["price"], data["description"], data["category"],
-               data["serving_options"])
+               data["photo"])
             )
 
 
@@ -64,4 +64,3 @@ class Database:
             result.row_factory = sqlite3.Row
             data = result.fetchall()
             return [dict(row) for row in data]
-

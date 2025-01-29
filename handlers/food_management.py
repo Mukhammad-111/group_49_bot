@@ -1,7 +1,7 @@
 from aiogram import Router, F, types
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import State, StatesGroup
+from aiogram.fsm.state import State, StatesGroup, default_state
 from aiogram.types import InlineKeyboardMarkup
 
 from database import Database
@@ -15,10 +15,11 @@ class Food(StatesGroup):
     price = State()
     description = State()
     category = State()
-    serving_options = State()
+    photo = State()
 
 
-@food_admin_router.message(Command("new_food"))
+
+@food_admin_router.message(Command("new_food"), default_state)
 async def new_food(message: types.Message, state: FSMContext):
     await message.answer("Напишите название блюда(напитка)")
     await state.set_state(Food.name)
@@ -83,14 +84,15 @@ async def process_description(message: types.Message, state: FSMContext):
 async def process_category(callback: types.CallbackQuery, state: FSMContext):
     category = callback.data
     await state.update_data(category=category)
-    await callback.message.answer("Варианты порций")
-    await state.set_state(Food.serving_options)
+    await callback.message.answer("Загрузите фоту")
+    await state.set_state(Food.photo)
 
 
-@food_admin_router.message(Food.serving_options)
+@food_admin_router.message(Food.photo, F.photo)
 async def process_serving_options(message: types.Message, state: FSMContext):
-    serving_options = message.text
-    await state.update_data(serving_options=serving_options)
+    photos = message.photo
+    biggest_photo = photos[-1]
+    await state.update_data(photo=biggest_photo.file_id)
     await message.answer("Новое блюдо(напиток) успешно сохранено")
     data = await state.get_data()
     print(data)

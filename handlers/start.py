@@ -39,7 +39,10 @@ async def start_handler(message: types.Message):
             ],
             [
                 types.InlineKeyboardButton(
-                    text="Наши блюдо", callback_data="dishes"
+                    text="Блюдо с картинками", callback_data="dishes_with_photo"
+                ),
+                types.InlineKeyboardButton(
+                    text="Блюдо с пагинациями", callback_data='dishes_with_pagination'
                 )
             ]
         ]
