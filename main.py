@@ -11,6 +11,7 @@ from handlers.review_dialog import review_router
 from aiogram import Bot
 from handlers.food_management import food_admin_router
 from handlers.dishes import dishes_router
+from handlers.group_management import group_router
 
 
 async def on_startup(bot: Bot):
@@ -18,6 +19,7 @@ async def on_startup(bot: Bot):
 
 
 async def main():
+    dp.include_router(group_router)
     dp.include_router(start_router)
     dp.include_router(menu_router)
     dp.include_router(random_dishes_router)
